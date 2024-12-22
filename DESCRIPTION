@@ -19,14 +19,27 @@ Depends:
     R (>= 4.2),
     SummarizedExperiment
 Imports: 
+    base,
+    BSgenome.Hsapiens.UCSC.hg19,
+    dplyr,
     ExperimentHub,
+    ExperimentHubData,
     GenomicRanges,
     HDF5Array,
-    R.utils,
-    rhdf5
-Suggests: 
-    ggplot2,
     knitr,
-    rmarkdown
+    methodical,
+    methrix,
+    openxlsx,
+    R.utils,
+    readr,
+    rhdf5,
+    rmarkdown,
+    stringr,
+    TCGAutils,
+    tibble,
+    usethis,
+    xlsx
+Suggests: 
+    ggplot2
 VignetteBuilder: knitr
 LazyData: false
