@@ -27,7 +27,6 @@ Imports:
     GenomicRanges,
     HDF5Array,
     knitr,
-    methodical,
     methrix,
     openxlsx,
     R.utils,
