@@ -22,10 +22,10 @@ download_meth_dataset = function(dataset, dir = getwd()){
     stop("dataset should be one of the dataset names in TumourMethDatasets")
   }
     
-  # Check that output_dir already exists
+  # Check that dir already exists
   if(!dir.exists(dir)){stop("dir doesn't exist")}
  
-  # Create output_dir from dir and dataset name
+  # Create output_file from dir and dataset name
   output_file = paste0(dir, "/", dataset, ".rds")
  
   # Extract the appropriate EH ID for the dataset
@@ -45,6 +45,10 @@ download_meth_dataset = function(dataset, dir = getwd()){
     tryCatch({rhdf5::h5ls(x); TRUE}, error = function(e) FALSE)))]
   rds_file = dataset_files[which(sapply(dataset_files, function(x)
     tryCatch({readRDS(x); TRUE}, error = function(e) FALSE)))]
+  
+  # Return an error if either H5 file or RDS file were not downloaded
+  if(length(h5_file) < 1){stop("H5 file cannot be found")}
+  if(length(rds_file) < 1){stop("RDS file cannot be found")}
   
   # Get current directory and indicate to change into it on exit
   current_dir = getwd()
