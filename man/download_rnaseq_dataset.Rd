@@ -2,7 +2,7 @@
 % Please edit documentation in R/download_datasets.R
 \name{download_rnaseq_dataset}
 \alias{download_rnaseq_dataset}
-\title{Download an RNA-Seq counts dataset from TumourMethData}
+\title{Download a RNA-Seq counts dataset from TumourMethData}
 \usage{
 download_rnaseq_dataset(dataset)
 }
@@ -11,9 +11,12 @@ download_rnaseq_dataset(dataset)
 listed in data(TumourMethDatasets) where \code{transcript_counts_available} is TRUE.}
 }
 \value{
-A data.frame with RNA-Seq counts calculated using Kallisto.
+A data.frame with RNA-Seq counts calcualted using Kallisto.
 }
 \description{
-A TSV file with the RNA-Seq counts is downloaded into the ExperimentHub cache
-located at \code{ExperimentHub::getExperimentHubOption("cache")} and is read into R as a data.frame.
+Download a RNA-Seq counts dataset from TumourMethData
+}
+\examples{
+mcrpc_rnaseq = TumourMethData::download_rnaseq_dataset(dataset = "mcrpc_wgbs_hg38_chr11")
+print(mcrpc_rnaseq)
 }
